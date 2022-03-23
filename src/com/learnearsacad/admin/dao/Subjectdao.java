@@ -58,7 +58,7 @@ public int deleteSubject(SubjectBean bean) throws SQLException {
 	int recordDeleted=0;
 	try {
 	  Connection con=DBConnection.getDBConnection();
-	    String query="delete from subjects where subid=(?)";
+	    String query="delete from subject where subid=(?)";
 		PreparedStatement pstmt=con.prepareStatement(query);
 		pstmt.setString(1, bean.getSubjectId());
 		recordDeleted = pstmt.executeUpdate();

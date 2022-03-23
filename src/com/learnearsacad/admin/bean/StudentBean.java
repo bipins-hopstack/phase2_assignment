@@ -6,13 +6,20 @@ public class StudentBean {
 	 private String studentName;
 	 private String studentGender;
 	 private int studentClass;
-	 
+	
+	 public StudentBean() {}
+	 @Override
+		public String toString() {
+			return "StudentBean [studentid=" + studentid + ", studentName=" + studentName + ", studentGender="
+					+ studentGender + ", studentClass=" + studentClass + "]";
+		}
  public int getStudentid() {
 		return studentid;
 	}
 	public void setStudentid(int studentid) {
 		this.studentid = studentid;
 	}
+	
 	public String getStudentName() {
 		return studentName;
 	}

@@ -8,13 +8,13 @@ public class ClassBean {
 	private String subId;
 	
 	
-	public ClassBean() {}
+	//public ClassBean() {}
 	
-	@Override
-	public String toString() {
-		return "ClassBean [calssId=" + calssId + ", time=" + time + ", teacherId=" + teacherId + ", subId=" + subId
-				+ ", Student=" + Student + "]";
-	}
+//@Override
+//	public String toString() {
+//		return "ClassBean [calssId=" + calssId + ", time=" + time + ", teacherId=" + teacherId + ", subId=" + subId
+//				+ ", Student=" + Student + "]";
+//	}
 	private String Student;
 
 	public int getCalssId() {

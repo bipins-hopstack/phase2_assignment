@@ -42,14 +42,15 @@ public List<ClassBean> getclassinfo(int classid) {
 		try {
 			Connection con= DBConnection.getDBConnection();
 			Statement stmt=con.createStatement();
-			String query="select * from class_table where classid="+classid;
+			String query="select distinct class_table.classid,class_table.time,class_table.teacherid,class_table.subid,student.name as studentname from student inner join class_table on class_table.classid=student.classid where class_table.classid="+classid;
 			ResultSet rs=stmt.executeQuery(query);
 			while(rs.next()) {
 				ClassBean bean=new ClassBean();
 				bean.setCalssId(rs.getInt(1));
 				bean.setTime(rs.getString(2));
 				bean.setTeacherId(rs.getInt(3));
-				bean.setSubId(rs.getString(4));			
+				bean.setSubId(rs.getString(4));
+				bean.setStudent(rs.getString(5));
 				classinfo.add(bean);
 			}
 			

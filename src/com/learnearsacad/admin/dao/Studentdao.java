@@ -13,14 +13,14 @@ public class Studentdao {
 	public int insertStudent(StudentBean bean) throws SQLException {
 		int recordInserted=0;
 		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			 Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "SYS as SYSDBA","pass");
+			 Connection con=DBConnection.getDBConnection();
 		    String query="insert into student values(?,?,?,?)";
 			PreparedStatement pstmt=con.prepareStatement(query);
 			pstmt.setInt(1, bean.getStudentid());
 			pstmt.setString(2,bean.getStudentName());
 			pstmt.setString(3, bean.getStudentGender());
 			pstmt.setInt(4,bean.getStudentClass());
+			System.out.println("statment executed");
 			recordInserted = pstmt.executeUpdate();
 		    
 		}

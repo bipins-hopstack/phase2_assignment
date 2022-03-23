@@ -57,6 +57,7 @@ public class ClassController extends HttpServlet {
 				out.println("<centre><span style='color:green'>Subject ID  |"+bean.getSubId()+"|</span></centre>");
 				out.println("<centre><span style='color:green'>Teacher ID  |"+bean.getTeacherId()+"|</span></centre>");
 				out.println("<centre><span style='color:green'>Class time  |"+bean.getTime()+"|</span></centre>");
+				out.println("<centre><span style='color:green'>StudentName  |"+bean.getStudent()+"|</span></centre>");
 				out.println("<br>");
 			}
 			

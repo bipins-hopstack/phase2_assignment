@@ -36,6 +36,8 @@ public class SubjectController extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String function=request.getParameter("functionbutton");
+		
+		
 		if(function!=null && function.equals("viewallsubjects"))
 		{
 			SubjectBean bean=new SubjectBean();
@@ -59,13 +61,13 @@ public class SubjectController extends HttpServlet {
 			
 			}
 			
-		}else if(function!=null && function.equals("deletsubject"))
+		}else if(function!=null && function.equals("deletetsubject"))
 		 {
 			Subjectdao obj=new Subjectdao();
 			SubjectBean bean=new SubjectBean();
 			RequestDispatcher rd=null;
 			bean.setSubjectId(request.getParameter("subjectid"));
-					try {
+					try {System.out.println("inside delete");
 				if(obj.deleteSubject(bean)!=0) {
 					rd=request.getRequestDispatcher("Subject.jsp");
 					PrintWriter out=response.getWriter();
@@ -76,7 +78,7 @@ public class SubjectController extends HttpServlet {
 				e.printStackTrace();
 			}
 		 }
-		else {
+		else if(function!=null && function.equals("insertsubject")) {
 	  
 		SubjectBean bean=new SubjectBean();
 		RequestDispatcher rd=null;

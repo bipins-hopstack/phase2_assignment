@@ -19,18 +19,14 @@ import com.learnearsacad.admin.dao.Studentdao;
 public class StudentController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public StudentController() {
-        super();
-    }
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		StudentBean bean=new StudentBean();
+		bean.setStudentid(Integer.parseInt(request.getParameter("studentid")));
+		bean.setStudentGender(request.getParameter("studentGender"));
+		bean.setStudentName(request.getParameter("studentName"));
+		bean.setStudentClass(Integer.parseInt(request.getParameter("studentClass")));
 		RequestDispatcher rd=null;
-		bean.setStudentid(Integer.parseInt(request.getParameter("regno")));
-		bean.setStudentName(request.getParameter("stuname"));
-		bean.setStudentGender(request.getParameter("gender"));
-		bean.setStudentClass(Integer.parseInt(request.getParameter("classstd")));
-		
 		Studentdao obj=new Studentdao();
 		try {
 			if(obj.insertStudent(bean)!=0) {
