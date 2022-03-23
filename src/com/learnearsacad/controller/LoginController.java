@@ -38,7 +38,7 @@ public class LoginController extends HttpServlet {
 		if(username.equalsIgnoreCase("tom") && password.equalsIgnoreCase("pass")) {
 			session.setAttribute("username", username);
 			session.setAttribute("password", password);
-			rd=request.getRequestDispatcher("Success.html");
+			rd=request.getRequestDispatcher("Success.jsp");
 			rd.forward(request, response);
 		}
 		else {

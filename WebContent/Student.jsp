@@ -33,9 +33,12 @@ Class</td><td><input type="number" name="classstd"></td>
 </tr>
 <tr>
 <td>
-<input type="submit" value="Insert Student"/>
+<input type="submit" value="Insert Student" name="register"/>
 </td></tr>
 </table>
 </form>
+<%  if(request.getParameter("register")!=null){ %>
+<jsp:useBean id="student" class="com.learnearsacad.admin.bean.SubjectBean"></jsp:useBean>
+<%} %>
 </body>
 </html>

@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ page import="java.util.Date" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +11,7 @@
 <body>
 <h2 align="center"><font color="green">Learners Academy Admin Home Page</font></h2>
 
-<div class="right_nav"><a href="logout.jsp" color="red"><font color="red">logout</font></a></div>
+<div class="right_nav"><a href="Logout.jsp" color="red"><font color="red"> logout </font><%= new Date() %></a></div>
 <hr>
 <h3>Admin Panel</h3>
 <table>

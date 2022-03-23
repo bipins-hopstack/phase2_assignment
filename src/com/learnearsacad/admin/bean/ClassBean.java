@@ -6,6 +6,15 @@ public class ClassBean {
 	private String time;
 	private int teacherId;
 	private String subId;
+	
+	
+	public ClassBean() {}
+	
+	@Override
+	public String toString() {
+		return "ClassBean [calssId=" + calssId + ", time=" + time + ", teacherId=" + teacherId + ", subId=" + subId
+				+ ", Student=" + Student + "]";
+	}
 	private String Student;
 
 	public int getCalssId() {
